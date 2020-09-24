@@ -2,7 +2,7 @@
 set -eu
 
 declare -A aliases=(
-	[12]='latest'
+	[13]='latest'
 	[9.6]='9'
 )
 
@@ -55,8 +55,8 @@ for version in "${versions[@]}"; do
 	commit="$(dirCommit "$version")"
 
 	fullVersion="$(awk '/-server-/ {print $1}' "$version/Dockerfile" | cut -d- -f 3)"
-	if [ "$fullVersion" = 13 ]; then
-		fullVersion="$(awk '/-server-/{print $1}' 13/Dockerfile | cut -d- -f 3- | cut -d_ -f 1)"
+	if [ "$fullVersion" = 14 ]; then
+		fullVersion="$(awk '/-server-/{print $1}' 14/Dockerfile | cut -d- -f 3- | cut -d_ -f 1)"
 	fi
 	versionArches="x86_64"
 
