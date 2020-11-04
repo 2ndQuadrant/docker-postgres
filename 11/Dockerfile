@@ -1,5 +1,5 @@
 # vim:set ft=dockerfile:
-FROM registry.access.redhat.com/ubi8/ubi:8.2-347
+FROM registry.access.redhat.com/ubi8/ubi:8.3-199
 
 LABEL name="PostgreSQL Container Images" \
       vendor="2ndQuadrant" \
@@ -26,7 +26,7 @@ RUN set -xe ; \
 # Install barman-cloud
 RUN set -xe ; \
 	yum -y install python38-pip python38-psycopg2 ; \
-	pip3.8 install barman[cloud]=="2.11" ; \
+	pip3.8 install barman[cloud]=="2.12" ; \
 	yum -y clean all --enablerepo='*'
 
 # make the sample config easier to munge (and "correct by default")
